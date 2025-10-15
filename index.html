@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denise Marcelo Bonifacio - Formulário Pessoal</title>
+    <style>
+        /* Variáveis de cores */
+        :root {
+            --rosa-principal: #ff6b9d;
+            --rosa-claro: #ffb6c1;
+            --rosa-suave: #ffe4e9;
+            --roxo: #c77dff;
+            --lilas: #e0b0ff;
+            --azul-claro: #a8d8ea;
+            --verde-claro: #a8e6cf;
+            --branco: #ffffff;
+            --cinza-claro: #f8f8f8;
+            --cinza-texto: #666666;
+            --sombra: rgba(255, 107, 157, 0.2);
+        }
+
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, var(--rosa-suave) 0%, var(--azul-claro) 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, var(--rosa-principal), var(--roxo));
+            color: var(--branco);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px var(--sombra);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "🌸 ✨ 💻 🌸";
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            font-size: 1.5em;
+            opacity: 0.3;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Seções */
+        section {
+            background: var(--branco);
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px var(--sombra);
+            border: 1px solid var(--rosa-claro);
+        }
+
+        section h2 {
+            color: var(--rosa-principal);
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 3px solid var(--rosa-claro);
+            padding-bottom: 10px;
+        }
+
+        section h3 {
+            color: var(--roxo);
+            margin: 25px 0 15px 0;
+            font-size: 1.3em;
+            padding-left: 15px;
+            border-left: 4px solid var(--azul-claro);
+        }
+
+        /* Fieldset e Legend */
+        fieldset {
+            border: 2px solid var(--rosa-claro);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            background: var(--rosa-suave);
+        }
+
+        legend {
+            color: var(--rosa-principal);
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 5px 15px;
+            background: var(--branco);
+            border-radius: 20px;
+            border: 2px solid var(--rosa-claro);
+        }
+
+        /* Formulários */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--roxo);
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--rosa-claro);
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: var(--branco);
+            margin-bottom: 15px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--rosa-principal);
+            box-shadow: 0 0 10px var(--sombra);
+        }
+
+        /* Checkboxes */
+        input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            accent-color: var(--rosa-principal);
+        }
+
+        /* Botões */
+        input[type="submit"],
+        input[type="reset"] {
+            background: linear-gradient(135deg, var(--rosa-principal), var(--roxo));
+            color: var(--branco);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--sombra);
+        }
+
+        input[type="reset"] {
+            background: linear-gradient(135deg, var(--cinza-texto), #999);
+        }
+
+        /* Listas */
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "💮";
+            position: absolute;
+            left: 0;
+            color: var(--rosa-principal);
+        }
+
+        .skills-list li:before {
+            content: "🌟";
+        }
+
+        .experience-list li:before {
+            content: "💼";
+        }
+
+        .education-list li:before {
+            content: "🎓";
+        }
+
+        /* Imagens */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .gallery img {
+            border-radius: 15px;
+            border: 3px solid var(--rosa-claro);
+            box-shadow: 0 5px 15px var(--sombra);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Links */
+        a {
+            color: var(--rosa-principal);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--roxo);
+            text-decoration: underline;
+        }
+
+        /* Rodapé */
+        footer {
+            background: linear-gradient(135deg, var(--roxo), var(--rosa-principal));
+            color: var(--branco);
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: var(--branco);
+            margin: 0 10px;
+            padding: 5px 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+        }
+
+        footer a:hover {
+            background: rgba(255,255,255,0.3);
+            text-decoration: none;
+        }
+
+        /* Divisórias */
+        hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--rosa-principal), transparent);
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 30px 15px;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            section {
+                padding: 25px;
+            }
+            
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Animações suaves */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Efeitos especiais */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Decorações florais */
+        .floral-decoration {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5em;
+            color: var(--rosa-principal);
+        }
+
+        /* Badges para competências */
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--azul-claro), var(--verde-claro));
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+            border: 1px solid var(--rosa-claro);
+        }
+
+        /* Timeline para experiência */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--rosa-claro);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "🌸";
+            position: absolute;
+            left: -35px;
+            top: 0;
+            background: var(--branco);
+            border: 2px solid var(--rosa-principal);
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="floating">
+            <h1>Denise Marcelo Bonifacio</h1>
+            <div class="subtitle">Estudante de Programacao Web</div>
+            <nav>
+                <a href="#cv">📄 Meu CV</a>
+                <a href="#galeria">🖼️ Galeria</a>
+                <a href="#contacto">📧 Contacto</a>
+            </nav>
+        </header>
+
+        <div class="floral-decoration">💐 ✨ 🌸 ✨ 💐</div>
+
+        <!-- Seção do Formulário de Contacto -->
+        <section id="contacto">
+            <h2>📧 Formulário de Contacto</h2>
+            
+            <form action="#" method="post">
+                <!-- Informações Pessoais -->
+                <fieldset>
+                    <legend>👤 Informações Pessoais</legend>
+                    
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                    
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="+258 84 897 5563">
+                    
+                    <label for="empresa">Empresa/Organização:</label>
+                    <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa">
+                </fieldset>
+                
+                <!-- Mensagem -->
+                <fieldset>
+                    <legend>✉️ Mensagem</legend>
+                    
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto" name="assunto">
+                        <option value="trabalho">💼 Proposta de Trabalho</option>
+                        <option value="suporte">🛠️ Pedido de Suporte Técnico</option>
+                        <option value="rede">🌐 Consultoria de Redes</option>
+                        <option value="orçamento">💰 Pedido de Orçamento</option>
+                        <option value="outro">✨ Outro</option>
+                    </select>
+                    
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui... 💖"></textarea>
+                </fieldset>
+                
+                <!-- Preferências -->
+                <fieldset>
+                    <legend>📞 Preferências de Contacto</legend>
+                    
+                    <input type="checkbox" id="contacto_email" name="preferencias" value="email">
+                    <label for="contacto_email">📧 Prefiro ser contactada por email</label>
+                    
+                    <input type="checkbox" id="contacto_telefone" name="preferencias" value="telefone">
+                    <label for="contacto_telefone">📞 Prefiro ser contactada por telefone</label>
+                    
+                    <input type="checkbox" id="contacto_whatsapp" name="preferencias" value="whatsapp">
+                    <label for="contacto_whatsapp">💬 Prefiro ser contactada por WhatsApp</label>
+                </fieldset>
+                
+                <!-- Botões -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <input type="submit" value="💌 Enviar Mensagem">
+                    <input type="reset" value="🧹 Limpar Formulário">
+                </div>
+            </form>
+        </section>
+
+        <div class="floral-decoration">🌺 ✨ 🌷 ✨ 🌺</div>
+
+        <!-- Seção do CV -->
+        <section id="cv">
+            <h2>📄 Curriculum Vitae - Denise Marcelo Bonifacio</h2>
+            
+            <h3>👤 Dados Pessoais</h3>
+            <div style="background: var(--rosa-suave); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                <p><strong>Nome:</strong> Denise Marcelo Bonifacio</p>
+                <p><strong>Naturalidade:</strong> Tete</p>
+                <p><strong>Data de Nascimento:</strong> 16 de Janeiro de 2007</p>
+                <p><strong>Estado Civil:</strong> Solteira</p>
+                <p><strong>BI nº:</strong> 100104235466</p>
+                <p><strong>Filiação:</strong> G.B.F e Estefania Fernando</p>
+                <p><strong>Endereço:</strong> Mozal Q.10 casa 381</p>
+                <p><strong>Nacionalidade:</strong> Moçambicana</p>
+            </div>
+            
+            <h3>🎓 Perfil Académico</h3>
+            <ul class="education-list">
+                <li><strong>2013-2018:</strong> Conclusão do ensino primário – Escola da Hidroeléctrica de Cahora-Bassa</li>
+                <li><strong>2018-2023:</strong> Conclusão do ensino Secundário – Escola Hidroeléctrica de Cahora-Bassa</li>
+            </ul>
+            
+            <h3>📚 Formação Profissional</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>2023</strong> – Conclusão do CV3 em Electricidade Industrial – Instituto de Transportes e Comunicações
+                </div>
+                <div class="timeline-item">
+                    <strong>2024</strong> – Conclusão do CV4 em Técnico de Suporte Informático – Instituto de Transportes e Comunicações
+                </div>
+                <div class="timeline-item">
+                    <strong>2025</strong> – Conclusão do CV5 em Técnico Suporte Informático – Instituto de Transportes e Comunicações
+                </div>
+            </div>
+            
+            <h3>💼 Experiência Profissional</h3>
+            <ul class="experience-list">
+                <li><strong>2026:</strong> Estagiei na MCEL como técnico de suporte informático – Zambézia</li>
+                <li><strong>2027-2030:</strong> Trabalhei como administradora de redes na HCB – Tete</li>
+                <li><strong>2031-2035:</strong> Trabalhei como assistente de linha telefónica na Vodacom</li>
+            </ul>
+            
+            <h3>🛠️ Aptidão e Competência</h3>
+            <div style="margin: 15px 0;">
+                <span class="badge">Microsoft Excel</span>
+                <span class="badge">Windows OS</span>
+                <span class="badge">Marketing Digital</span>
+                <span class="badge">Suporte Técnico</span>
+                <span class="badge">Administração de Redes</span>
+                <span class="badge">Sistemas Operacionais</span>
+            </div>
+            
+            <h3>🌍 Conhecimento Linguístico</h3>
+            <ul>
+                <li><strong>Português:</strong> falado e escrito com fluência</li>
+                <li><strong>Inglês:</strong> falado e escrito básico</li>
+            </ul>
+            
+            <h3>🌟 Habilidades/Capacidades</h3>
+            <ul class="skills-list">
+                <li>Aprender com maior facilidade</li>
+                <li>Instalar e configurar sistemas operacionais Windows</li>
+                <li>Actuar com bons resultados em contextos flexíveis</li>
+                <li>Pôr em prática, com sucesso, projectos próprios e alheios</li>
+                <li>Trabalhar em equipe</li>
+                <li>Criar sistemas de organização de dados/informações</li>
+            </ul>
+            
+            <h3>💡 Informações Adicionais</h3>
+            <ul>
+                <li>Disponível a tempo inteiro</li>
+                <li>Com preferência de trabalhar fora da cidade</li>
+            </ul>
+            
+            <h3>📞 Contactos</h3>
+            <div style="background: var(--azul-claro); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                <p><strong>Telemóvel:</strong> +258 84 897 5563</p>
+                <p><strong>Telefone:</strong> +258 83 386 7137</p>
+                <p><strong>Email:</strong> denise.bonifacio120@gmail.com</p>
+                <p><strong>Email alternativo:</strong> denise.bonifacio@hotmail.com</p>
+            </div>
+            
+            <p style="text-align: center; margin-top: 30px;">
+                <a href="#contacto">📧 Entrar em Contacto</a>
+            </p>
+        </section>
+
+        <div class="floral-decoration">🌼 ✨ 🌹 ✨ 🌼</div>
+
+        <!-- Seção da Galeria Multimédia -->
+        <section id="galeria">
+            <h2>🖼️ Galeria Multimédia</h2>
+            
+            <h3>📸 Portfolio Profissional</h3>
+            <div class="gallery">
+                <img src="imagem1.jpg" alt="Suporte Técnico" width="300" height="200">
+                <img src="imagem2.jpg" alt="Redes e Comunicações" width="300" height="200">
+                <img src="imagem3.jpg" alt="Administração de Redes" width="300" height="200">
+            </div>
+            
+            <h3>🏆 Certificações</h3>
+            <div class="gallery">
+                <img src="foto1.jpg" alt="CV3 Electricidade Industrial" width="250" height="350">
+                <img src="pre1.jpg" alt="CV4 Suporte Informático" width="250" height="350">
+                <img src="pre2.jpg" alt="CV5 Suporte Informático" width="250" height="350">
+            </div>
+            
+            <h3>📁 Documentos para Download</h3>
+            <ul>
+                <li><a href="cv_denise_bonifacio.pdf" download>📥 Download do CV Completo (PDF)</a></li>
+                <li><a href="certificados_denise.zip" download>📚 Certificados e Diplomas</a></li>
+                <li><a href="portfolio_tecnico.pdf" download>🛠️ Portfolio Técnico</a></li>
+            </ul>
+            
+            <h3>🔗 Ligações Profissionais</h3>
+            <ul>
+                <li><a href="https://linkedin.com/in/denisebonifacio" target="_blank">💼 Perfil LinkedIn</a></li>
+                <li><a href="https://github.com/denisebonifacio" target="_blank">💻 Portfolio GitHub</a></li>
+                <li><a href="mailto:denise.bonifacio120@gmail.com">📧 Email Profissional</a></li>
+            </ul>
+            
+            <p style="text-align: center; margin-top: 30px;">
+                <a href="#contacto">💌 Solicitar Mais Informações</a>
+            </p>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>&copy; 2024 Denise Marcelo Bonifacio. Todos os direitos reservados. 💖</p>
+            <p style="margin-top: 15px;">
+                <a href="#contacto">📧 Contacto</a>
+                <a href="#cv">📄 CV</a>
+                <a href="#galeria">🖼️ Galeria</a>
+                <a href="#top">⬆️ Voltar ao Topo</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                Técnica de Suporte Informático | Administradora de Redes | Especialista em TI
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
